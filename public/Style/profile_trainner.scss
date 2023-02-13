@@ -1,0 +1,57 @@
+
+
+//colors
+$blue : #4e7a97;
+$white : white;
+$blue_lingth : #5aacd1;
+
+#content_trainner_profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    img{
+        border-radius: 100%;
+        width: 20%;
+        height: 20%;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+
+    #content_description{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+
+        p{
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    a{
+        button{
+            background-color: $blue;
+            padding: 10px;
+            color: $white;
+            font-size: 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 5px 4px 4px $blue_lingth ;
+        }
+
+        button:hover{
+            background-color: transparent;
+            border: 2.5px solid $blue;
+            color: black;
+            box-shadow: none;
+        }
+    }
+}
