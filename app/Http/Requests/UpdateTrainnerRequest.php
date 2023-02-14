@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTrainnerRequest extends FormRequest
+class UpdateTrainnerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class StoreTrainnerRequest extends FormRequest
     public function rules()
     {
         return [
-            'nameTrainner'=>'required|max:20',
-            'fileTrainner'=>'required|image',
-            'text_description'=>'required|max:255'
+            'updateTrainner'=>'required|max:20',
+            'updatefileTrainner'=>'required|image',
+            'update_text_description'=>'required|max:255'
         ];
     }
 }

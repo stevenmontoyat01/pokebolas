@@ -89,11 +89,12 @@ nav{
 
 .content_register{
    display: flex;
+   flex-flow: row wrap;
    justify-content: center;
    align-content: center;
    margin: 3%;
 
-   #alert{
+   .alert{
       display: flex;
       flex-flow: row;
       justify-content: flex-start;
@@ -101,6 +102,10 @@ nav{
       background-color: $red_linght;
       padding: 20px;
       height: 30%;
+      width: 50%;
+      border-radius: 5px;
+      margin-top: 2%;
+      margin-bottom: 2%;
 
       ul{
          li{

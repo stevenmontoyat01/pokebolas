@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+   @include('common.good')
    <div id="first_content_trainners"> 
       @foreach ($trainers as $trainer)
             <div class="cards_trainners">
@@ -16,7 +17,7 @@
                   <p>{{ $trainer->description }}</p>
                </div>
                <div class="container_buttom">
-                  <a href="/trainner/{{ $trainer->slug }}"><button>vermas...</button></a>
+                  <a href="/trainner/{{ $trainer->slug }}"><button type="submit">vermas...</button></a>
                </div>
             </div>
       @endforeach

@@ -1,6 +1,7 @@
 #content_trainner_profile {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 5%;
@@ -24,6 +25,29 @@
   font-size: 18px;
   text-align: center;
 }
+#content_trainner_profile #content_button_profile {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+  width: 20%;
+}
+#content_trainner_profile #content_button_profile .button_del {
+  background-color: #c22525;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 5px 4px 4px #d88888;
+}
+#content_trainner_profile #content_button_profile .button_del:hover {
+  background-color: transparent;
+  border: 2.5px solid #c22525;
+  color: black;
+  box-shadow: none;
+}
 #content_trainner_profile a button {
   background-color: #4e7a97;
   padding: 10px;
@@ -39,6 +63,23 @@
   border: 2.5px solid #4e7a97;
   color: black;
   box-shadow: none;
+}
+
+.content_status {
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+  align-items: center;
+  background-color: #c22525;
+  border-radius: 5px;
+  padding: 20px;
+  color: white;
+  width: 40%;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #48c273;
+  box-shadow: 10px 10px 5px #61b17c;
+  margin-bottom: 5%;
 }
 
 body {
@@ -110,11 +151,12 @@ nav #content_nav2 a:hover {
 
 .content_register {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   margin: 3%;
 }
-.content_register #alert {
+.content_register .alert {
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
@@ -122,8 +164,12 @@ nav #content_nav2 a:hover {
   background-color: #dc4141;
   padding: 20px;
   height: 30%;
+  width: 50%;
+  border-radius: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
-.content_register #alert ul li {
+.content_register .alert ul li {
   color: white;
 }
 .content_register .form_register {

@@ -4,10 +4,15 @@
 $blue : #4e7a97;
 $white : white;
 $blue_lingth : #5aacd1;
+$red : #c22525;
+$red_lingth : #d88888;
+$green:#48c273;
+$green_lingth:#61b17c;
 
 #content_trainner_profile{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5%;
@@ -35,6 +40,32 @@ $blue_lingth : #5aacd1;
         }
     }
 
+    #content_button_profile{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: center;
+        width: 20%;
+
+        .button_del{
+            background-color: $red;
+            padding: 10px;
+            color: $white;
+            font-size: 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 5px 4px 4px $red_lingth ;
+        }
+
+        .button_del:hover{
+            background-color: transparent;
+            border: 2.5px solid $red;
+            color: black;
+            box-shadow: none;
+        }
+    }
+
     a{
         button{
             background-color: $blue;
@@ -55,3 +86,20 @@ $blue_lingth : #5aacd1;
         }
     }
 }
+
+.content_status{
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: center;
+    align-items: center;
+    background-color:$red;
+    border-radius: 5px;
+    padding: 20px;
+    color: $white;
+    width: 40%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $green;
+    box-shadow: 10px 10px 5px $green_lingth;
+    margin-bottom: 5% ;
+    }

@@ -7,7 +7,9 @@
 @endsection
 
 @section('content')
+
 <div class="content_register">
+    @include('common.errors')
     <form class="form_register" action="/trainnerUp/{{$trainner->slug}}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf

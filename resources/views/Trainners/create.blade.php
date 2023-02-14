@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="content_register">
-   
+   @include('common.errors')
    <form class="form_register" action="/trainners/create" method="POST" enctype="multipart/form-data">
       @csrf
       <div>
@@ -26,15 +26,6 @@
       <button type="submit">post</button>
    </form>
 
-   @if($errors->all())
-      <div id="alert">
-         <ul>
-      @foreach ($errors->all() as $error)
-         <li>{{$error}}</li>
-      @endforeach
-         </ul>
-      </div>
-   @endif
 </div>
 
 

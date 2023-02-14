@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Trainner;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreTrainnerRequest;
+use App\Http\Requests\UpdateTrainnerRequest;
+use Illuminate\Support\Facades\Storage;
 
 
 class TrainnerController extends Controller
@@ -13,7 +16,7 @@ class TrainnerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {   
         $trainers = Trainner::all();
         return view('Trainners.index', compact('trainers'));
@@ -35,7 +38,7 @@ class TrainnerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTrainnerRequest $request)
     {   
 
         if($request->hasFile('fileTrainner')){
@@ -50,7 +53,9 @@ class TrainnerController extends Controller
         $trainer->avatar = $name;
         $trainer->description = $request -> input('text_description');
         $trainer-> save();
-        return 'saved';
+        
+        
+        return  redirect()-> route("trainneresource.index")->with('status','create trainner');
     }
 
     /**
@@ -85,14 +90,13 @@ class TrainnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(UpdateTrainnerRequest $request, $slug)
     {   
         if($request->hasFile('updatefileTrainner')){
             $file = $request->file('updatefileTrainner');
             $name = time().$file->getClientOriginalName();
             $file->move(public_path().'/images/',$name);
         }
-
 
         $trainner = Trainner::where('slug','=',$slug)->firstOrFail();
         $trainner->name = $request-> input('updateTrainner');
@@ -101,7 +105,7 @@ class TrainnerController extends Controller
         $trainner->avatar = $name;
         $trainner->save();
 
-        return $trainner;
+        return redirect()->route('trainneresource.show', [$trainner->slug])->with('status','trainner update');
     }
 
     /**
@@ -110,8 +114,15 @@ class TrainnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($slug)
+    {   
+        $trainner = Trainner::Where('slug','=',$slug)->firstOrFail();
+        $trainner->delete();
+        $file_path = public_path().'/images/'.$trainner->avatar;
+        if(Storage::exists($file_path)){
+            Storage::delete($file_path);
+        }
+        $trainner->delete();
+        return redirect()->route('trainneresource.index')->with('status','delete trainner');
     }
 }
