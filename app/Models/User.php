@@ -19,13 +19,13 @@ class User extends Authenticatable
     //validation witch rol
     
     public function authorizeRoles($roles){
-        if($this->is_array($roles)){
+        if($this->anyhasRol($roles)){
             return true;
         }
-        abort(401,'this ction is unauthorize');
+        abort(401,'this ation is unauthorize');
     }
 
-    public function anyhasrol($roles){
+    public function anyhasRol($roles){
         if(is_array($roles)){
             foreach($roles as $role){
                 if($this->hasRole($role)){
@@ -40,7 +40,7 @@ class User extends Authenticatable
         return false;
     }
 
-    public function hasrole($role){
+    public function hasRole($role){
         if($this->roles()->where('name',$role)->first()){
             return true;
         }

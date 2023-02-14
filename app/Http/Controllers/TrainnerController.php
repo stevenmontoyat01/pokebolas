@@ -18,8 +18,9 @@ class TrainnerController extends Controller
      */
     public function index(Request $request)
     {   
+        //$request->user()->authorizeRoles(['admin']);
         $trainers = Trainner::all();
-        return view('Trainners.index', compact('trainers'));
+        return view('Trainners.index', compact(['trainers']));
     }
 
     /**
