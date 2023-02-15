@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 //route of index
 Route::get("/trainners", "App\Http\Controllers\TrainnerController@index");
 //route of create
-Route::get("/register", "App\Http\Controllers\TrainnerController@create");
+Route::get("/registerTrainner", "App\Http\Controllers\TrainnerController@create");
 //route of post 
 Route::post("/trainners/create","App\Http\Controllers\TrainnerController@store");
 //route of show
@@ -36,6 +36,8 @@ Route::put("/trainnerUp/{id}","App\Http\Controllers\TrainnerController@update");
 //routes of resource
 
 Route::resource('trainneresource' ,"App\Http\Controllers\TrainnerController"::class);
+Route::resource('pokemones','App\Http\Controllers\PokemonController'::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

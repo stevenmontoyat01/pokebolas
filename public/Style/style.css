@@ -99,6 +99,43 @@ header h1 {
   font-size: 45px;
 }
 
+nav {
+  background-color: #4e7a97;
+  height: 3.5rem;
+}
+nav .container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: center;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav .container a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 3px 3px 3px black;
+}
+nav .container .navbar-brand {
+  display: flex;
+  align-items: center;
+  width: 45%;
+}
+nav .container div {
+  width: 50%;
+  height: 3.3rem;
+}
+nav .container div ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin: 0;
+}
+nav .container div ul li {
+  text-decoration: none;
+}
+
 .content_register {
   display: flex;
   flex-flow: row wrap;
